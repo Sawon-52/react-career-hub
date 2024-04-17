@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Job = ({ job }) => {
   const { logo, job_title, company_name, job_type, remote_or_onsite, location, salary } = job;
   return (
@@ -16,6 +17,9 @@ const Job = ({ job }) => {
       <button className="btn btn-info">View Details</button>
     </div>
   );
+};
+Job.propTypes = {
+  job: PropTypes.object.isRequired,
 };
 
 export default Job;
