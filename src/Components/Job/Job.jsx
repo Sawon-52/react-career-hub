@@ -1,4 +1,7 @@
 import PropTypes from "prop-types";
+import { SlLocationPin } from "react-icons/sl";
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
+
 const Job = ({ job }) => {
   const { logo, job_title, company_name, job_type, remote_or_onsite, location, salary } = job;
   return (
@@ -11,13 +14,19 @@ const Job = ({ job }) => {
         <button className="btn btn-outline btn-info">{job_type}</button>
       </div>
       <div className="flex gap-10 text-xl">
-        <h3>{location}</h3>
-        <h3>Salary: {salary}</h3>
+        <h3 className="flex items-center gap-3">
+          <SlLocationPin /> {location}
+        </h3>
+        <h3 className="flex items-center gap-3">
+          <RiMoneyDollarCircleLine />
+          Salary: {salary}
+        </h3>
       </div>
       <button className="btn btn-info">View Details</button>
     </div>
   );
 };
+
 Job.propTypes = {
   job: PropTypes.object.isRequired,
 };
