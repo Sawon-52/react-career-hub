@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="md:flex items-center justify-between my-4 ">
+    <div className="md:flex items-center justify-between my-12 min-h-max">
       <div>
         <h1 className="text-5xl font-bold">
           One Step <br /> Closer To Your <br /> <span className="text-blue-400"> Dream Job</span>

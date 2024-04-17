@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { SlLocationPin } from "react-icons/sl";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
-  const { logo, job_title, company_name, job_type, remote_or_onsite, location, salary } = job;
+  const { id, logo, job_title, company_name, job_type, remote_or_onsite, location, salary } = job;
   return (
     <div className="border-2 border-gray-600 rounded-xl p-10 space-y-3">
       <img src={logo} alt="Company logo" />
@@ -17,12 +18,17 @@ const Job = ({ job }) => {
         <h3 className="flex items-center gap-3">
           <SlLocationPin /> {location}
         </h3>
-        <h3 className="flex items-center gap-3">
+        <h3 className="flex items-center gap-3 ">
           <RiMoneyDollarCircleLine />
           Salary: {salary}
         </h3>
       </div>
-      <button className="btn btn-info">View Details</button>
+      
+      <div>
+        <Link to={`/job/${id}`}>
+          <button className="btn btn-info">View Details</button>
+        </Link>
+      </div>
     </div>
   );
 };
